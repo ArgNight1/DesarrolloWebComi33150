@@ -1,0 +1,61 @@
+@use '_colores' as c;
+
+/*Empieza el footer*/
+
+
+.alinea__footer2 {
+    height: 0px;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 5px;
+    padding-bottom: 25px;
+    background-color: map-get(c.$color,"gris__oscuro");
+}
+
+footer div a img {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    box-shadow: 0 0 6px 0 white;
+        &:hover {
+            width: 40px;
+            height: 40px;
+            border-radius: 3px;
+            box-shadow: 0 0 6px 0 white;
+        }
+}
+
+
+footer section div a {
+    text-decoration: none;
+    color: white;
+    background-color: map-get(c.$color,"gris__oscuro");
+    font-size: 14px;
+        &:hover {
+            color: #fff;
+            font-size: 16px;
+            text-shadow: 10px 10px 5px black;
+        }
+}
+
+
+.pie{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    a {
+        text-decoration: none;
+        color: black;
+        font-size: 14px;
+            &:hover {
+                color: #fff;
+                font-size: 18px;
+                font-style: oblique;
+                text-shadow: 10px 10px 5px black;
+            }
+    }
+}
+
+
+
+
+/*aca termina el footer*/
