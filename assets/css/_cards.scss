@@ -11,7 +11,7 @@
 
 .mi__card {
 
-    background: map-get(c.$color,"fondo__tarjeta");
+    background: map-get(c.$color, "color__negro");
     margin-top: 20px;
     display: flex;
     width: 95%;
@@ -20,13 +20,14 @@
     align-items: center;
     justify-content: space-evenly;
     border-radius: 10px;
-    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 6px 0 map-get(c.$color, "color__negro");
+
     img {
         width: 130px;
         /*editar en escritorio a 150*/
         height: 250px;
         object-fit: cover;
-        border: 3px solid #000;
+        border: 3px solid map-get(c.$color, "color_txt_boton");
         border-radius: 10px;
         display: block;
     }
@@ -36,7 +37,7 @@
 .card__mobile {
     /* esta card se habilita en tablet o escritorio*/
 
-    background: map-get(c.$color,"fondo__tarjeta");
+    background: map-get(c.$color, "fondo__tarjeta");
     margin-top: 20px;
     display: flex;
     width: 95%;
@@ -45,7 +46,7 @@
     align-items: center;
     justify-content: space-evenly;
     border-radius: 10px;
-    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 6px 0 black (0, 0, 0, 0.6);
     display: none;
 }
 
@@ -53,33 +54,36 @@
 
 .contenido__texto__card {
     width: 40%;
-    color: black;
-        h4 {
-        background-color: map-get(c.$color,"fondo__tarjeta");
+    background-color: map-get(c.$color, "color__negro");
+
+    h4 {
+        color: map-get(c.$color, "color_txt_boton");
+        // background-color: map-get(c.$color,"color__negro");
         text-align: left;
+    }
+
+    p {
+        color: map-get(c.$color, "color_txt_card");
+        font-weight: 300;
+        padding-top: 15px;
+        text-align: left;
+        // background-color: map-get(c.$color,"color__negro");
+    }
+
+    a {
+        // background-color: map-get(c.$color,"color__negro");
+        text-decoration: none;
+        color: map-get(c.$color, "color_txt_boton");
+        font-size: 12px;
+        font: bold;
+
+        &:hover {
+            text-shadow: 0px 0px 5px map-get(c.$color, "fondo__boton");
+            color: map-get(c.$color, "color_txt_boton");
+            font-style: oblique;
         }
 
-        p {
-            font-weight: 300;
-            padding-top: 15px;
-            text-align: left;
-            background-color: map-get(c.$color,"fondo__tarjeta");
-        }
-
-        a {
-            background-color: map-get(c.$color,"fondo__tarjeta");
-            text-decoration: none;
-            color: blue;
-            font-size: 14px;
-            font: bold;
-
-            &:hover{
-                background-color: gray;
-                color: #fff;
-                font-style: oblique;
-            }
-        
-        }
+    }
 }
 
 /* aca terminan las cards.*/

@@ -1,28 +1,61 @@
 @use '_colores' as c;
+
 * {
     margin: 0;
     padding: 0;
 }
 
-.color__oscuro {
-    background-color: map-get(c.$color,"gris__oscuro");
-}
-
-
 .color__claro {
-    background-color: map-get(c.$color,"gris__claro");
+    background-color: map-get(c.$color, "color_txt_boton");
 }
+
+
+.btn__fondo {
+    background-color: map-get(c.$color, "fondo__boton");
+}
+
+.color__negro {
+    background-color: map-get(c.$color, "color__negro");
+    border-bottom: 3px solid map-get(c.$color, "fondo__boton");
+}
+
+.navbar a {
+    color: map-get(c.$color, "color_txt_boton");
+
+    &:hover {
+        color: map-get(c.$color, "fondo__boton");
+    }
+
+}
+
+.centrar__txt__marketycursos {
+    text-align: center;
+    padding-top: 20px;
+
+    a {
+        text-decoration: none;
+        text-shadow: 0px 0px 5px map-get(c.$color, "fondo__boton");
+        color: map-get(c.$color, "color__negro");
+
+        &:hover {
+            color: map-get(c.$color, "fondo__boton");
+        }
+    }
+}
+
 
 /* centrar y decorado de imagen de contruccion */
-.centrar__img{
+.centrar__img {
     text-align: center;
     padding-top: 30px;
     padding-bottom: 35px;
-        img{
+
+    img {
         width: 80%;
-        box-shadow: 10px 7px 15px 3px black;
-        }
     }
+}
+
+
 
 
 a {
@@ -34,21 +67,41 @@ a {
     width: 100%;
 }
 
-.h1 {
-    font-family:'Times New Roman', Times, serif;
+.h1__new {
+    // font-family:'Times New Roman', Times, serif;
     font-weight: bold;
-    padding-top: 20px;
-    color: white;
-    font-size: 54px;
     text-align: center;
-    text-shadow: 10px 10px 5px black;
+    padding-top: 30px;
+    color: map-get(c.$color, "color__negro");
+    font-size: 54px;
+    text-shadow: 0px 0px 5px map-get(c.$color, "color__negro");
     /* background:linear-gradient(#333333 0%, white 50%, #333333 100%); */
 }
 
 .h2 {
-    @extend .h1;
+    @extend .h1__new;
+    color: map-get(c.$color, "color_txt_boton");
+    text-shadow: 0px 0px 5px map-get(c.$color, "color_txt_boton");
     font-size: 40px;
     margin-top: 20px;
+}
+
+.h2__oscura {
+    @extend .h1__new;
+    font-weight: 500;
+    font-size: 40px;
+
+
+}
+
+.oculta__mobile {
+    display: none;
+}
+
+.oculta__pc {
+    &:hover {
+        box-shadow: 0px -9px 6px 8px map-get(c.$color, "fondo__boton");
+    }
 }
 
 
@@ -62,7 +115,7 @@ a {
     grid-template-areas:
 
 
-        "gmenu"    
+        "gmenu"
         "gheader"
         "gmain"
         "gvideos"
@@ -93,16 +146,16 @@ a {
 .grid__videos {
     grid-area: gvideos;
     text-align: center;
-    background-color: #333333;
+    background-color: map-get(c.$color, "color__negro");
 }
 
 .grid__sponsor {
     grid-area: gsponsor;
+    background-color: map-get(c.$color, "color_txt_boton");
 
 }
 
 .grid__footer {
     grid-area: gfooter;
-    background-color: #333333;
     text-align: center;
 }
